@@ -28,7 +28,7 @@ def balance_teams(teams):
             else:
                 team_stats.append(team_roster)
                 team_roster =  {'Team' : '', 'Players': "", "Total Players": 0}
-                break
+
     return team_stats     
 
 teams_list = balance_teams(teams)
