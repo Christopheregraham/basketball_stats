@@ -49,3 +49,6 @@ def show_stats(teamlist, i):
 a = show_stats(teams_list, 0)
 b = show_stats(teams_list, 1)
 c = show_stats(teams_list, 2)
+
+if __name__ == "__main__":
+    print(a, b, c)
