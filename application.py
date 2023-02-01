@@ -28,6 +28,7 @@ def balance_teams(teams):
             else:
                 team_stats.append(team_roster)
                 team_roster =  {'Team' : '', 'Players': "", "Total Players": 0}
+                
 
     return team_stats     
 
@@ -35,7 +36,7 @@ teams_list = balance_teams(teams)
     
 def show_stats(teamlist, i):
     team_stat = teams_list[i]
-    print(
+    return(
         f"""
         Team: {team_stat['Team']}
         ---------------------------
@@ -46,9 +47,44 @@ def show_stats(teamlist, i):
 
         """
     )
-a = show_stats(teams_list, 0)
-b = show_stats(teams_list, 1)
-c = show_stats(teams_list, 2)
+team1 = show_stats(teams_list, 0)
+team2 = show_stats(teams_list, 2)
+team3 = show_stats(teams_list, -1)
 
-if __name__ == "__main__":
-    print(a, b, c)
+
+
+print("Welcome!\n\nBASKETBALL TEAM STATS TOOL\n")
+print("\n----MENU----\n\n")
+while True:
+    print(
+    """
+    Here are your choices:
+        A) Display Team Stats
+        B) Quit
+    """
+    )
+    answer = input("Enter an option: ")
+
+    if answer.lower() == "a":
+        print(
+            """
+            A) Panthers
+            B) Bandits
+            C) Warriors  
+            """
+        )
+        answer2 = input("Enter an option: ")
+        if answer2.lower() == "a":
+            print(team1)
+            input("Press enter to continue...")
+        elif answer2.lower() == "b":
+            print(team2)
+            input("Press enter to continue...")
+        elif answer2.lower() == "c":
+            print(team3)
+            input("Press enter to continue...")
+        else:
+            print("Not a valid choice")
+    elif answer.lower() == "b":
+        print("Thanks for using my app")
+        break
